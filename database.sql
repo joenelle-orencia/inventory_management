@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS inventory_management CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE inventory_management;
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(190) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  role ENUM('admin','user') NOT NULL DEFAULT 'user',
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS products (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(150) NOT NULL,
+  sku VARCHAR(60) NOT NULL UNIQUE,
+  category VARCHAR(100) NOT NULL DEFAULT '',
+  description TEXT NULL,
+  quantity INT UNSIGNED NOT NULL DEFAULT 0,
+  unit_price DECIMAL(12,2) UNSIGNED NOT NULL DEFAULT 0.00,
+  low_stock_threshold INT UNSIGNED NOT NULL DEFAULT 5,
+  created_by INT UNSIGNED NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT fk_products_created_by FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE SET NULL,
+  INDEX idx_products_name (name),
+  INDEX idx_products_category (category),
+  INDEX idx_products_quantity (quantity)
+) ENGINE=InnoDB;

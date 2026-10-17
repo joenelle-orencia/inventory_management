@@ -1,0 +1,313 @@
+body { background: #f6f8fb; color: #202938; min-height: 100vh; }
+.navbar-brand { letter-spacing: .2px; }
+.hero { color: #fff; background: linear-gradient(125deg, #1746a2, #3279d9); }
+.hero .lead { max-width: 620px; opacity: .9; }
+.hero-stat { padding: 2rem; border: 1px solid rgba(255,255,255,.25); border-radius: 1rem; background: rgba(255,255,255,.1); }
+.card, .stat-card { border: 1px solid #e6eaf0; border-radius: .9rem; box-shadow: 0 3px 14px rgba(24,39,75,.035); }
+.stat-card { background: #fff; padding: 1.25rem; height: 100%; }
+.stat-number { font-size: 2rem; font-weight: 750; letter-spacing: -.04em; margin-top: .35rem; }
+.stat-warning { border-color: #f1d28a; background: #fffaf0; }
+.card-header { border-bottom-color: #e9edf3; border-radius: .9rem .9rem 0 0 !important; }
+.table thead th { color: #667085; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+.table td { vertical-align: middle; }
+footer { background: #fff; }
+@media (max-width: 575.98px) { .hero .display-5 { font-size: 2.2rem; } .table { font-size: .9rem; } }
+/* ===== GENERAL DESIGN ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f4f7fb;
+    color: #263445;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+/* ===== NAVIGATION BAR ===== */
+.navbar {
+    background: #1e3a5f !important;
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    color: #dbeafe !important;
+    margin-right: 12px;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+.navbar-text {
+    color: #e2e8f0 !important;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2, h3, h4, h5 {
+    color: #1e293b;
+    font-weight: 700;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.text-muted {
+    color: #718096 !important;
+}
+
+/* ===== CARDS ===== */
+.card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(30, 58, 95, 0.05);
+    overflow: hidden;
+}
+
+.card-header {
+    background: white !important;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.card-body {
+    padding: 24px;
+}
+
+/* ===== DASHBOARD STATISTICS ===== */
+.stat-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #2563eb;
+    border-radius: 9px;
+    padding: 22px;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(30, 58, 95, 0.1);
+}
+
+.stat-number {
+    color: #2563eb;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.stat-warning {
+    border-left-color: #f59e0b;
+    background: #fffbeb;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+.btn-outline-primary {
+    color: #2563eb;
+    border-color: #2563eb;
+}
+
+.btn-outline-primary:hover {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-outline-danger {
+    color: #dc2626;
+    border-color: #dc2626;
+}
+
+.btn-outline-danger:hover {
+    background: #dc2626;
+    color: white;
+}
+
+/* ===== FORMS ===== */
+.form-control,
+.form-select {
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 12px;
+    background-color: white;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.form-label {
+    color: #334155;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+/* ===== PRODUCT TABLE ===== */
+.table-responsive {
+    border-radius: 10px;
+}
+
+.table {
+    margin-bottom: 0;
+    background: white;
+}
+
+.table thead th {
+    background: #eff4fa;
+    color: #475569;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 15px;
+    border-bottom: 1px solid #dbe4ef;
+    white-space: nowrap;
+}
+
+.table tbody td {
+    padding: 14px 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #edf1f5;
+}
+
+.table-hover tbody tr:hover {
+    background: #f8fbff;
+}
+
+/* ===== STOCK STATUS ===== */
+.badge {
+    padding: 7px 10px;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+.text-bg-success {
+    background: #dcfce7 !important;
+    color: #166534 !important;
+}
+
+.text-bg-warning {
+    background: #fef3c7 !important;
+    color: #92400e !important;
+}
+
+.text-bg-danger {
+    background: #fee2e2 !important;
+    color: #991b1b !important;
+}
+
+/* ===== ALERT MESSAGES ===== */
+.alert {
+    border: none;
+    border-radius: 8px;
+    padding: 14px 18px;
+}
+
+/* ===== HOMEPAGE HERO ===== */
+.hero {
+    background: linear-gradient(135deg, #1e3a5f, #2563eb);
+    color: white;
+    border-radius: 12px;
+    padding: 40px;
+}
+
+.hero h1 {
+    color: white;
+}
+
+.hero .lead {
+    line-height: 1.7;
+}
+
+.hero-stat {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: white;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 40px;
+    padding: 20px 0;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .hero {
+        padding: 25px 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .card-body {
+        padding: 18px;
+    }
+
+    .stat-number {
+        font-size: 27px;
+    }
+
+    .table thead th,
+    .table tbody td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .navbar-text {
+        margin: 8px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 25px;
+    }
+
+    .btn {
+        font-size: 13px;
+    }
+}
